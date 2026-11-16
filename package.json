@@ -2,6 +2,9 @@
   "name": "table-tennis-tournament",
   "private": true,
   "type": "module",
+  "scripts": {
+    "dev": "npx --yes netlify-cli dev --offline --internal-disable-edge-functions"
+  },
   "dependencies": {
     "@netlify/blobs": "^11.1.9"
   }

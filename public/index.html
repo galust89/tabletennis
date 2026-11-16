@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Table Tennis Tournament</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
@@ -155,7 +156,7 @@ dialog h2{margin-bottom:14px}
     <div>
       <h1>Table Tennis Tournament</h1>
       <p class="sub"><strong>Starts Wednesday, 18 November 2026</strong></p>
-      <p class="sub">34 players, 8 groups, top two from each group go to the playoffs</p>
+      <p class="sub">36 players, 8 groups, top two from each group go to the playoffs</p>
     </div>
     <div class="progress">
       <p id="progress-text"></p>
@@ -212,7 +213,7 @@ var GROUPS={
   E:["Vahan Mnatsakanyan","Haykanush Abelyan","Alexander Dainiak","Gevorg Melkonyan"],
   F:["Ruben Hovhannisyan","Aram Vanyan","Tatevik Sargsyan1","Armen Hovhannisyan2"],
   G:["Khachatur Khachatryan","Michael Avetisyan","Artavazd Grigoryan","Meri Srapyan"],
-  H:["Norayr Hakobyan","Harut","Arsen Abrahamyan","Hripsime Muradyan"]
+  H:["Norayr Hakobyan","Harut Khachatryan","Arsen Abrahamyan","Hripsime Muradyan","Lusine Simonyan"]
 };
 var P4=[[[0,3],[1,2]],[[0,2],[3,1]],[[0,1],[2,3]]];
 var P5=[[[0,4],[1,3]],[[0,3],[2,4]],[[0,2],[1,4]],[[0,1],[2,3]],[[1,2],[3,4]]];
@@ -361,7 +362,7 @@ function viewGroups(){
   return h+'</div>';
 }
 function viewMatches(){
-  var h='<h2>Group stage matches</h2><p class="note">'+(admin?"Type the sets won by each player. Standings and the playoff bracket update as you go.":"60 matches. Pick a group to see its table and fixtures together.")+'</p><div class="chips" role="group" aria-label="Filter by group">';
+  var h='<h2>Group stage matches</h2><p class="note">'+(admin?"Type the sets won by each player. Standings and the playoff bracket update as you go.":M.length+" matches. Pick a group to see its table and fixtures together.")+'</p><div class="chips" role="group" aria-label="Filter by group">';
   ["all"].concat(GN).forEach(function(g){
     h+='<button type="button" class="chip" data-filter="'+g+'" aria-pressed="'+(filter===g)+'">'+(g==="all"?"All groups":"Group "+g)+'</button>';
   });

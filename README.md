@@ -26,6 +26,21 @@ npx netlify-cli login
 npx netlify-cli deploy --prod
 ```
 
+## Run locally
+
+You need [Node.js](https://nodejs.org) 18 or newer.
+
+```
+npm install
+npm run dev
+```
+
+(`npm run dev` runs `netlify-cli dev` with edge functions switched off. This site has none, and on some Windows machines the Deno helper they need is blocked, which makes every page answer "500 Could not proxy request".)
+
+Then open http://localhost:8888. This runs the page and the back-end together, so login and saving work just like on the live site. Results are kept in a local test store, not the live data. Sign in with `admin` / `admin` (or whatever `ADMIN_USER` / `ADMIN_PASSWORD` are set to in your shell). Stop it with Ctrl+C.
+
+Quick look without the back-end: open `public/index.html` directly in a browser. The page then says "Results are saved in this browser only" and keeps everything in that browser.
+
 ## Admin login
 
 The default is username `admin`, password `admin`.

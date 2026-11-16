@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Two crossed table tennis rackets and a ball -->
+  <g stroke="#0d1524" stroke-width="2" stroke-linejoin="round">
+    <g transform="rotate(35 32 40)">
+      <rect x="28.5" y="33" width="7" height="22" rx="3" fill="#c98b4a"/>
+      <circle cx="32" cy="20" r="15" fill="#17407a"/>
+    </g>
+    <g transform="rotate(-35 32 40)">
+      <rect x="28.5" y="33" width="7" height="22" rx="3" fill="#c98b4a"/>
+      <circle cx="32" cy="20" r="15" fill="#d62828"/>
+    </g>
+    <circle cx="32" cy="6" r="4.5" fill="#ffffff" stroke-width="1.5"/>
+  </g>
+</svg>
