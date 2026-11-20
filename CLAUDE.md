@@ -2,7 +2,9 @@
 
 A one-page tournament site with a small Netlify back-end. Live at https://tabletennis.am (Netlify project `table-tennis-epam`). The tournament starts on 18 November 2026.
 
-Format: 36 players in 8 groups (A, B, C and H have 5 players, D to G have 4), 64 round-robin group matches, then a top-16 knockout bracket with a 3rd-place match.
+Format: 37 players in 8 groups (A, B, C, E and H have 5 players, D, F and G have 4), 68 round-robin group matches, then a top-16 knockout bracket with a 3rd-place match.
+
+Late entry: Norayr Antonyan joined group E on 20 November 2026, after results were stored. He is added through `LATE` in `index.html` (player id 36, matches 65 to 68, group E rounds 4 to 7), not inserted into `GROUPS`, so existing ids stay unchanged. Add any further late players the same way.
 
 ## Layout
 

@@ -156,7 +156,7 @@ dialog h2{margin-bottom:14px}
     <div>
       <h1>Table Tennis Tournament</h1>
       <p class="sub"><strong>Starts Wednesday, 18 November 2026</strong></p>
-      <p class="sub">36 players, 8 groups, top two from each group go to the playoffs</p>
+      <p class="sub">37 players, 8 groups, top two from each group go to the playoffs</p>
     </div>
     <div class="progress">
       <p id="progress-text"></p>
@@ -224,6 +224,16 @@ GN.forEach(function(g){
   (GID[g].length===5?P5:P4).forEach(function(pairs,r){
     pairs.forEach(function(p){M.push({id:M.length+1,g:g,r:r+1,a:GID[g][p[0]],b:GID[g][p[1]]});});
   });
+});
+/* Late entries: added after results existed, so they are appended (new player id and new match ids at
+   the end) instead of inserted into GROUPS, which would shift every id after them. Each late player
+   plays everyone already in the group, one match per extra round. */
+var LATE=[["E","Norayr Antonyan"]];
+LATE.forEach(function(x){
+  var g=x[0],p=PLAYERS.push({name:x[1],g:g})-1,others=GID[g].slice(),r=0;
+  M.forEach(function(m){if(m.g===g&&m.r>r)r=m.r;});
+  GID[g].push(p);
+  others.forEach(function(o,i){M.push({id:M.length+1,g:g,r:r+i+1,a:o,b:p});});
 });
 
 /* ---------- State ---------- */
